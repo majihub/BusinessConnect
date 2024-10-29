@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}
+Business Connect - Apply job
+{% endblock %}
+{% block body %}
+<section class="calculator" style="margin-top: 0px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="left-image">
+            <img src="/static/assets/images/apply-for-job-when-company-isnt-.png" alt="">
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="section-heading">
+            <h6>Apply</h6>
+            <h4>You can apply job here...</h4>
+          </div>
+          <form id="calculate" action="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="bname">Name of businessman</label>
+                  <input type="name" name="bname" id="bname" value="{{jobid.Name}}" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="bsname">Name of the buisness</label>
+                  <input type="text" name="bsname" id="bsname" value="{{jobid.BName}}" autocomplete="on" >
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="applicant">Your name</label>
+                  <input type="text" name="applicant" id="applicant" value="{{user.Name}}" autocomplete="on" >
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="notice">Notice period</label>
+                  <input type="text" name="notice" id="notice"  autocomplete="on" >
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="salary">Expected salary</label>
+                  <input type="text" name="salary" id="salary"  autocomplete="on" >
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="orange-button">Apply job</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

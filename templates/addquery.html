@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}
+Business Connect - Add query
+{% endblock %}
+{% block body %}
+<section class="calculator" style="margin-top: 0px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="left-image">
+            <img src="/static/assets/images/query-removebg-preview.png" alt="">
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="section-heading">
+            <h6>Your Query</h6>
+            <h4>Feel free to ask something...</h4>
+          </div>
+          <form id="calculate" action="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="name">Your Name</label>
+                  <input type="name" name="name" id="name" value="{{user.Name}}" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <label for="query">Query</label>
+                  <input type="text" name="query" id="query" placeholder="" autocomplete="on" >
+                </fieldset>
+              </div>
+              
+              <div class="col-lg-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="orange-button">Submit Your Query</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

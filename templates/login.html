@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}
+Business Connect -Login
+{% endblock %}
+{% block body %}
+<section class="contact-us-form" style="height: 500px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading">
+            <h6>LOGIN</h6>
+            <h4>Login here to explore</h4>
+            {% if messages %}
+            {% for i in messages %}
+            <div class="alert alert-danger">{{i}}</div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+          <form id="contact" action="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}*" placeholder="Your Password..." required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <select name="usertype" id="usertype">
+                    <option>Select user type</option>
+                    <option value="user">User</option>
+                    <option value="businessman">Business Man</option>
+                    <option value="investor">Investor</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="orange-button">Login</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

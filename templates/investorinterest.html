@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %}
+Business Connect - Investor interest
+{% endblock %}
+{% block body %}
+<section class="calculator" style="margin-top: 0px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="left-image">
+            <img src="/static/assets/images/1-removebg-preview.png" alt="">
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="section-heading">
+            <h6>Submission</h6>
+            <h4>You can submit your investment details  here...</h4>
+          </div>
+          <form id="calculate" action="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="bname">Name of businessman</label>
+                  <input type="name" name="bname" id="bname" value="{{jobid.Name}}" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="bsname">Name of the buisness</label>
+                  <input type="text" name="bsname" id="bsname" value="{{jobid.BName}}" autocomplete="on" >
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="applicant">Your name</label>
+                  <input type="text" name="applicant" id="applicant" value="{{user.Name}}" autocomplete="on" >
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                <label for="applicant">Investment Type</label>
+                  <select name="itype" id="itype">
+                    <option>Select Investment Type</option>
+                    <option value="partially">Partially</option>
+                    <option value="Fully">Fully</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="iamount">Investment amount</label>
+                  <input type="text" name="iamount" id="iamount"  autocomplete="on" >
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <label for="itime">Time of Investment</label>
+                  <select name="itime" id="itype">
+                    <option>Select Investment Time</option>
+                    <option value="immediately">Immediately</option>
+                    <option value="after 1 week">After 1 week</option>
+                    <option value="after 1 month">After 1 month</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="orange-button">Submit your Interest</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

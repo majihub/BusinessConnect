@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+Business Connect - View Query
+{% endblock %}
+{% block body %}
+<section class="what-we-do">
+    <div class="container">
+        <div class="row">
+            <div class="right-items">
+                <div class="row">{% if data1 %}
+                    {% for i in data1 %}
+                    <div class="col-lg-6">
+                        <div class="item">
+                            <em>01</em>
+                            <h3>Your Name:</h3><h4 class="text-transform:uppercase;">{{i.Name}}</h4>
+                            <p><h3>Your Query:</h3>{{i.Query}}</p>
+                            <p><h3>Reply     :</h3>{{i.Reply}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    nothing
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %}
+Business Connect -BusinessProposal
+{% endblock %}
+{% block body %}
+<section class="contact-us-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading">
+            <h6>BUSINESS PROPOSAL</h6>
+            <h4>Make your Business Proposal here</h4>
+          </div>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+          <form id="contact" action="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-6">
+                    <fieldset>
+                      <input type="name" name="name" id="name" value="{{user.Name}}" autocomplete="on" required>
+                    </fieldset>
+                  </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="bname" id="bname" placeholder="Business Name..." autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="regno" id="regno" placeholder="Company Reg No..." required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <select name="bcategory" id="bcategory">
+                    <option>Select Business Category</option>
+                    <option value="user">Fashion designing</option>
+                    <option value="businessman">Software development</option>
+                    <option value="investor">Restaurants and cafes</option>
+                    <option value="">Financial Businesses</option>
+                    <option value="">Construction Businesses</option>
+                    <option value="">Film production</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <textarea name="propobjective" id="propobjective" placeholder="Proposal Objective..."></textarea>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="lifetime" id="lifetime" placeholder="Project/Development Lifetime..." required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="experience" id="experience"  placeholder="Experience..." required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="skillset" id="skillset" placeholder="Skill Set..." autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="contactno" id="contactno"  placeholder="Your Contact Number..." required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <textarea name="address" id="address" placeholder="Address..."></textarea>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="orange-button">Create Proposal</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

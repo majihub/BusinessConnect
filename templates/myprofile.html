@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+Business Connect - My Profile
+{% endblock %}
+{% block body %}
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3" >
+                <div class="section-heading">
+                    <h6>My Profile</h6>
+                    <h4>You are <span style="text-transform: uppercase;">{{user.Name}}</span></h4>
+                </div>
+            </div>
+            <div class="col-lg-10 offset-lg-1" style="text-align: center;">
+                    <div class="item">
+                        <div class="right-image">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <h4>Your name is {{user.Name}}</h4>
+                        <p>Your Email ID is {{user.EmailID}}</p>
+                        <p>Your Password is {{user.Password}}</p>
+                        <p>Your Mobile Number is {{user.Mobile}}</p>
+                        <p>Your Adhar Number is {{user.AdharNo}}</p>
+                        <h5>You are registered as<span style="text-transform: uppercase;"><b> {{user.UserType}}</b></span></h5>
+                        <a href="profileupdate/{{user.id}}"><button class="btn btn-success">Update your profile</button></a>
+                        
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

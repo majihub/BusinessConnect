@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}
+Business Connect - Applied jobs
+{% endblock %}
+{% block body %}
+<section class="what-we-do">
+    <div class="container">
+        <div class="row">
+            <div class="right-items">
+                <div class="row">
+                    {% if data1 %}
+                    {% for i in data1 %}
+                    <div class="col-lg-6">
+                        <div class="item">
+                            <em>01</em>
+                            <h3>Applied Businessman:</h3><h4 class="text-transform:uppercase;">{{i.Business}}</h4>
+                            <p><h3>Applied businessman Name:</h3>{{i.BusinessMan}}</p>
+                            <p><h3>NoticePeriod            :</h3>{{i.NoticePeriod}}</p>
+                            <p><h3>ExpectedSalary          :</h3>{{i.ExpectedSalary}}</p>
+                            <p><h3>Status                  :</h3>{{i.Status}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% elif bdata %}
+                    {% for i in bdata %}
+                    <div class="col-lg-6">
+                        <div class="item">
+                            <em>01</em>
+                            <h3>Applied Businessman:</h3><h4 class="text-transform:uppercase;">{{i.Business}}</h4>
+                            <p><h3>Applied businessman Name:</h3>{{i.BusinessMan}}</p>
+                            <p><h3>NoticePeriod            :</h3>{{i.NoticePeriod}}</p>
+                            <p><h3>ExpectedSalary          :</h3>{{i.ExpectedSalary}}</p>
+                            <p><h3>Status                  :</h3>{{i.Status}}</p>
+                            <form method="POST">
+                                {% csrf_token %}
+                            <p><button type="submit" class="btn btn-success" name="application" value="You can attend interview">Accept application</button></p>
+                            <p><button type="submit" class="btn btn-danger" name="application" value="Your application rejected">Decline application</button></p>
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

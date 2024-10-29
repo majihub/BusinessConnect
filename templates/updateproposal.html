@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %}
+Business Connect -BusinessProposal
+{% endblock %}
+{% block body %}
+<section class="contact-us-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading">
+            <h6>BUSINESS PROPOSAL</h6>
+            <h4>Make your Business Proposal here</h4>
+          </div>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+          <form id="contact" action="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-6">
+                    <fieldset>
+                      <input type="name" name="name" id="name" value="{{propo.Name}}" autocomplete="on" required>
+                    </fieldset>
+                  </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="bname" id="bname" value="{{propo.BName}}" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="regno" id="regno" value="{{propo.CRegNo}}" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <select name="bcategory" id="bcategory">
+                    <option value="{{propo.Category}}" selected>{{propo.Category}}</option>
+                    <option value="fashion designing">Fashion designing</option>
+                    <option value="Software development">Software development</option>
+                    <option value="Restaurants and cafes">Restaurants and cafes</option>
+                    <option value="Financial Businesses">Financial Businesses</option>
+                    <option value="Construction Businesses">Construction Businesses</option>
+                    <option value="Film production">Film production</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <textarea name="propobjective" id="propobjective">{{propo.Objective}}</textarea>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="lifetime" id="lifetime" value="{{propo.Lifetime}}" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="experience" id="experience"  value="{{propo.Experience}}" required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="skillset" id="skillset" value="{{propo.SkillSet}}" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="contactno" id="contactno"  value="{{propo.ContactNo}}" required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <textarea name="address" id="address">{{propo.Address}}</textarea>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="orange-button">Update</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

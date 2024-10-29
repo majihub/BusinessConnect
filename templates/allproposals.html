@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% block title %}
+Business Connect - Business Proposals
+{% endblock %}
+{% block body %}
+<div class="page-heading" style="background-color: #312D61;height: 20px;">
+    <div class="container"style="margin-top: 2px;">
+      <div class="row">
+        <div class="col-lg-12" >
+          <div class="header-text">
+            <h2 >All Proposals</h2>
+            <div class="div-dec"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Main Banner Area End ***** -->
+
+  <section class="top-section" >
+    <div class="container" >
+      <div class="row">
+        {% if user.UserType == "businessman" %}
+        {% for i in propo %}
+        <div class="col-lg-6">
+          <div class="accordions is-first-expanded">
+            <article class="accordion">
+                <div class="accordion-head">
+                  <span>Business Name : {{i.BName}} </span>
+                </div>
+            </article>
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>Business Category : {{i.Category}}</span>
+                </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Proposal Objective : {{i.Objective}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+            <div class="accordion-head">
+                <span>Project/development Lifetime : {{i.Lifetime}}</span>
+            </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Experience : {{i.Experience}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Skillset : {{i.SkillSet}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Contact No : {{i.ContactNo}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Address : {{i.Address}}</span>
+              </div>
+            </article>
+            </div>
+        </div>
+       
+        {% endfor %}
+        {% elif user.UserType == "investor" %}
+        {% for i in propo %}
+        <div class="col-lg-6">
+          <div class="accordions is-first-expanded">
+            <article class="accordion">
+                <div class="accordion-head">
+                  <span>Business Name : {{i.BName}} </span>
+                </div>
+            </article>
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>Business Category : {{i.Category}}</span>
+                </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Proposal Objective : {{i.Objective}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+            <div class="accordion-head">
+                <span>Project/development Lifetime : {{i.Lifetime}}</span>
+            </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Experience : {{i.Experience}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Skillset : {{i.SkillSet}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Contact No : {{i.ContactNo}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Address : {{i.Address}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                <a href="investorinterest/{{i.id}}"><button class="btn btn-secondary">Interested???</button></a>
+            </div>
+            </article>
+            </div>
+        </div>
+       
+        {% endfor %}
+        {% elif user.UserType == "user" %}
+        {% for i in propo %}
+        <div class="col-lg-6">
+          <div class="accordions is-first-expanded">
+            <article class="accordion">
+                <div class="accordion-head">
+                  <span>Business Name : {{i.BName}} </span>
+                </div>
+            </article>
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>Business Category : {{i.Category}}</span>
+                </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Proposal Objective : {{i.Objective}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+            <div class="accordion-head">
+                <span>Project/development Lifetime : {{i.Lifetime}}</span>
+            </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Experience : {{i.Experience}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Skillset : {{i.SkillSet}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Contact No : {{i.ContactNo}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                  <span>Address : {{i.Address}}</span>
+              </div>
+            </article>
+            <article class="accordion">
+              <div class="accordion-head">
+                <a href="applyjobs/{{i.id}}"><button class="btn btn-secondary">Apply Job</button></a>
+            </div>
+            </article>
+            </div>
+        </div>
+       
+        {% endfor %}
+        {% endif %}
+        
+      </div>
+    </div>
+  </section>  
+  {% endblock %}

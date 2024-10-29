@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}
+Business Connect - Interested Investors
+{% endblock %}
+{% block body %}
+<section class="what-we-do">
+    <div class="container">
+        <div class="row">
+            <div class="right-items">
+                <div class="row">
+                    {% if bdata %}
+                    {% for i in bdata %}
+                    <div class="col-lg-6">
+                        <div class="item">
+                            <em>01</em>
+                            <h3>BuisnessMan:</h3><h4 class="text-transform:uppercase;">{{i.BusinessMan}}</h4>
+                            <p><h3>Business:</h3>{{i.Business}}</p>
+                            <p><h3>Applicant:</h3>{{i.Applicant}}</p>
+                            <p><h3>Investment Type:</h3>{{i.InvestmentType}}</p>
+                            <p><h3>Investment Amount:</h3>{{i.Amount}}</p>
+                            <p><h3>Investment Time:</h3>{{i.TimeofInvestment}}</p>
+                            <p><h3>Status:</h3>{{i.Status}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% elif data1 %}
+                    {% for i in data1 %}
+                    <div class="col-lg-6">
+                        <div class="item">
+                            <em>01</em>
+                            <h3>BuisnessMan:</h3><h4 class="text-transform:uppercase;">{{i.BusinessMan}}</h4>
+                            <p><h3>Business:</h3>{{i.Business}}</p>
+                            <p><h3>Applicant:</h3>{{i.Applicant}}</p>
+                            <p><h3>Investment Type:</h3>{{i.InvestmentType}}</p>
+                            <p><h3>Investment Amount:</h3>{{i.Amount}}</p>
+                            <p><h3>Investment Time:</h3>{{i.TimeofInvestment}}</p>
+                            <form method="POST">
+                                {% csrf_token %}
+                            <p><button type="submit" class="btn btn-success" name="application" value="Accepted your Interest">Accept Interest</button></p>
+                            <p><button type="submit" class="btn btn-danger" name="application" value="Rejected your Interest">Decline Interest</button></p>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
